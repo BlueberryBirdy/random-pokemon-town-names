@@ -1,0 +1,5 @@
+##grflangid 0x01
+
+STR_GRF_NAME           :{TITLE} - {VERSION}
+STR_GRF_DESCRIPTION    :Randomized town names in the style of Pokemon.
+STR_TOWN_NAME          :{TITLE}

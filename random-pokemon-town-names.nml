@@ -1,0 +1,657 @@
+grf {
+    grfid: "\D0R11";
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESCRIPTION);
+    version: 0;
+    min_compatible_version: 0;
+}
+
+// Universal - 30 Colours
+town_names(universal_colour) {
+    {
+        // Literally the games lol
+        text("Red", 1),
+        text("Green", 1),
+        text("Blue", 1),
+        text("Yellow", 1),
+
+        text("Gold", 1),
+        text("Silver", 1),
+        text("Crystal", 1),
+
+        text("Ruby", 1),
+        text("Sapphire", 1),
+        text("Emerald", 1),
+
+        text("Diamond", 1),
+        text("Pearl", 1),
+        text("Platinum", 1),
+
+        text("Black", 1),
+        text("White", 1),
+
+        //text("X", 1),
+        //text("Y", 1),
+
+        text("Sun", 1),
+        text("Moon", 1),
+
+        text("Scarlet", 1),
+        text("Violet", 1),
+
+        // Greyscale
+        text("Grey", 1),
+        // Red
+        text("Crimson", 1),
+        // Orange/Yellow
+        text("Orange", 1),
+        // Green
+        text("Mint", 1),
+        text("Cyan", 1),
+        text("Cian", 1),
+        // Blue
+        // Purple
+        text("Purple", 1),
+        // Other
+        text("Rainbow", 1),
+        text("Chroma", 1),
+        text("Prisma", 1),
+        
+    }
+}
+town_names(universal_prefix) {
+    {
+        text("New ", 1),
+        text("Ever ", 1),
+        text("Little ", 1),
+        text("Great ", 1),
+        text("Grand ", 1),
+    }
+}
+town_names(maybe_universal_prefix) {
+    {
+        text("", 14),
+        town_names(universal_prefix, 1)
+    }
+}
+town_names(universal_suffix) {
+    {
+        text("ral", 1),
+        text("cove", 1),
+        text("veil", 1),
+        text("ville", 1),
+        text("cove", 1),
+        text("ridge", 1),
+        text("boro", 1),
+        text("opolis", 1),
+        text("port", 1),
+        text("bury", 1),
+        text("ton", 1),
+        text("muth", 1),
+        text("gem", 1),
+        text("field", 1),
+    }
+}
+town_names(maybe_universal_suffix) {
+    {
+        text("", 2),
+        town_names(universal_suffix, 1)
+    }
+}
+town_names(universal_municipality) {
+    {
+        text(" Settlement", 1),
+        text(" Plateau", 1),
+        text(" Bridge", 1),
+        text(" Tower", 1),
+        text(" Road", 1),
+        text(" Hills", 1),
+        text(" Zone", 1),
+//        text(" Island", 2), // This thing always generates hilariously inland
+        text(" Village", 2),
+        text(" Town", 10),
+        text(" City", 10),
+    }
+}
+
+// Field things (Flowers and Veges) - 29 colours
+town_names(field_colour) {
+    {
+        // Greyscale
+        text("Vanilla", 1),
+        // Red
+        text("Rubia", 1),
+        text("Chilli", 1),
+        text("Tomato", 1),
+        text("Poppy", 1),
+        text("Holly", 1),
+        // Orange/Yellow
+        text("Primrose", 1),
+        text("Dandelion", 1),
+        text("Carrot", 1),
+        text("Buttercup", 1),
+        text("Marigold", 1),
+        text("Goldenrod", 1),
+        text("Saffron", 1),
+        text("Pumpkin", 1),
+        text("Wheat", 1),
+        // Green
+        text("Grass", 1),
+        text("Kiwifruit", 1),
+        text("Lily", 1),
+        text("Cress", 1),
+        // Blue
+        text("Bluebell", 1),
+        // Purple
+        text("Azalea", 1),
+        text("Amaranth", 1),
+        text("Orchid", 1),
+        text("Iris", 1),
+        text("Fuschia", 1),
+        text("Lavender", 1),
+        text("Lilac", 1),
+        text("Snapdragon", 1),
+        text("Radish", 1),
+        // Other
+    }
+}
+town_names(field_suffix) {
+    {
+        text("leaf", 1),
+    }
+}
+town_names(field_municipality) {
+    {
+        text(" Farms", 2),
+        text(" Acres", 2),
+        text(" Meadows", 2),
+        text(" Field", 2),
+    }
+}
+
+town_names(field_pattern_1) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(field_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(field_suffix, 1),
+        town_names(universal_suffix, 1),
+    }
+}
+town_names(field_pattern_2) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(field_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        text("", 2),
+        town_names(field_suffix, 1)
+    }
+    {
+        town_names(universal_municipality, 1)
+    }
+}
+town_names(field_pattern_3) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(field_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(maybe_universal_suffix, 1),
+    }
+    {
+        town_names(field_municipality, 1),
+    }
+}
+
+town_names(field_complete) {
+    {
+        town_names(field_pattern_1, 1),  // No. This Suffixes
+        town_names(field_pattern_2, 20), // No. Universal Municipalities
+        town_names(field_pattern_3, 4),  // No. This Municipalities
+    }
+}
+
+// Bushes - 4 Colours
+town_names(bush_colour) {
+    {
+        // Greyscale
+        // Red
+        text("Berry", 1),
+        text("Coffee", 1),
+        text("Rose", 1),
+        // Orange/Yellow
+        // Green
+        text("Plant", 1),
+        // Blue
+        // Purple
+        // Other
+    }
+}
+town_names(bush_suffix) {
+    {
+        town_names(field_suffix, 1),
+        text("thorn", 1),
+        text("bush", 1)
+    }
+}
+town_names(bush_municipality) {
+    {
+        town_names(field_municipality, 2),
+        text(" Thicket", 1),
+    }
+}
+
+town_names(bush_pattern_1) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(bush_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(bush_suffix, 1),
+        town_names(universal_suffix, 1),
+    }
+}
+town_names(bush_pattern_2) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(bush_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        text("", 2),
+        town_names(bush_suffix, 1)
+    }
+    {
+        town_names(universal_municipality, 1)
+    }
+}
+town_names(bush_pattern_3) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(bush_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(maybe_universal_suffix, 1),
+    }
+    {
+        town_names(bush_municipality, 1),
+    }
+}
+
+town_names(bush_complete) {
+    {
+        town_names(bush_pattern_1, 3),  // No. This Suffixes
+        town_names(bush_pattern_2, 20), // No. Universal Municipalities
+        town_names(bush_pattern_3, 5),  // No. This Municipalities
+    }
+}
+
+// Trees - 28 colours
+town_names(tree_colour) {
+    {
+        // Greyscale
+        text("Ash", 1),
+        // Red
+        text("Oak", 1),
+        text("Apple", 1),
+        text("Cherry", 1),
+        text("Chestnut", 1),
+        text("Maroon", 1),
+        text("Mahogany", 1),
+        text("Walnut", 1),
+        text("Palm", 1),
+        text("Fir", 1),
+        // Orange/Yellow
+        text("Bark", 1),
+        text("Ecru", 1),
+        text("Apricot", 1),
+        text("Almond", 1),
+        text("Lemon", 1),
+        text("Orange", 1),
+        text("Peach", 1),
+        // Green
+        text("Willow", 1),
+        text("Lime", 1),
+        text("Olive", 1),
+        text("Viridian", 1),
+        text("Hazel", 1),
+        // Blue
+        // Purple
+        text("Wenge", 1),
+        // Other
+        text("Spring", 1),
+        text("Summer", 1),
+        text("Autumn", 1),
+        text("Winter", 1),
+        text("Glimmer", 1),
+    }
+}
+town_names(tree_suffix) {
+    {
+        text("arbor", 1),
+        text("teak", 1),
+        text("root", 1),
+        text("grove", 1),
+        text("wood", 1)
+    }
+}
+town_names(tree_municipality) {
+    {
+        town_names(bush_municipality, 3),
+        text(" Forest", 2),
+        text(" Grove", 1),
+        text(" Wood", 1),
+        text(" Tangle", 1),
+    }
+}
+
+town_names(tree_pattern_1) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(tree_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(tree_suffix, 1),
+        town_names(universal_suffix, 1),
+    }
+}
+town_names(tree_pattern_2) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(tree_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        text("", 2),
+        town_names(tree_suffix, 1)
+    }
+    {
+        town_names(universal_municipality, 1)
+    }
+}
+town_names(tree_pattern_3) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(tree_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(maybe_universal_suffix, 1),
+    }
+    {
+        town_names(tree_municipality, 1),
+    }
+}
+
+town_names(tree_complete) {
+    {
+        town_names(tree_pattern_1, 5),  // No. This Suffixes
+        town_names(tree_pattern_2, 20), // No. Universal Municipalities
+        town_names(tree_pattern_3, 10),  // No. This Municipalities
+    }
+}
+
+// Mineral - 64 colours
+town_names(mineral_colour) {
+    {
+        town_names(universal_colour, 1),
+        // Greyscale
+        text("Rock", 1),
+        text("Stone", 1),
+        text("Cobble", 1),
+        text("Titanium", 1),
+        text("Lead", 1),
+        text("Carbon", 1),
+        text("Zinc", 1),
+        text("Soot", 1),
+        text("Smoke", 1),
+        text("Seashell", 1),
+        text("Granite", 1),
+        text("Slate", 1),
+        text("Steel", 1),
+        text("Pewter", 1),
+        text("Marble", 1),
+        text("Onyx", 1),
+        text("Jet", 1),
+        text("Charcoal", 1),
+        text("Coal", 1),
+        text("Boulder", 1),
+        // Red
+        text("Realgar", 1),
+        text("Minium", 1),
+        text("Cadmium", 1),
+        text("Iron", 1),
+        text("Brick", 1),
+        text("Coral", 1),
+        text("Dun", 1),
+        text("Sienna", 1),
+        text("Rust", 1),
+        text("Ochre", 1),
+        text("Cinnabar", 1),
+        text("Tyrian", 1),
+        text("Vulcan", 1),
+        text("Lava", 1),
+        text("Vermillion", 1),
+        // Orange/Yellow
+        text("Mineral", 1),
+        text("Copper", 1),
+        text("Bronze", 1),
+        text("Amber", 1),
+        text("Umber", 1),
+        text("Caramel", 1),
+        text("Citrine", 1),
+        text("Sand", 1),
+        // Green
+        text("Malachite", 1),
+        text("Verdigris", 1),
+        text("Marsh", 1),
+        text("Pthalo", 1),
+        text("Celadon", 1),
+        text("Olivine", 1),
+        text("Viridian", 1),
+        text("Turquoise", 1),
+        text("Moonstone", 1),
+        // Blue
+        text("Glacier", 1),
+        text("Cobalt", 1),
+        text("Azure", 1),
+        text("Lapis", 1),
+        text("Lazuli", 1),
+        text("Cerulean", 1),
+        text("Cassius", 1),
+        // Purple
+        text("Indigo", 1),
+        // Other
+        text("Bismuth", 1),
+        text("Chrome", 1),
+        text("Agate", 1),
+        text("Opal", 1),
+    }
+}
+town_names(mineral_suffix) {
+    {
+        text("pit", 1),
+        text("stone", 1),
+        text("brick", 1),
+    }
+}
+town_names(mineral_municipality) {
+    {
+        text(" Quarry", 1),
+        text(" Mine", 1),
+    }
+}
+
+town_names(mineral_pattern_1) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(mineral_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(mineral_suffix, 1),
+        town_names(universal_suffix, 1),
+    }
+}
+town_names(mineral_pattern_2) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(mineral_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        text("", 2),
+        town_names(mineral_suffix, 1)
+    }
+    {
+        town_names(universal_municipality, 1)
+    }
+}
+town_names(mineral_pattern_3) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(mineral_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(maybe_universal_suffix, 1),
+    }
+    {
+        town_names(mineral_municipality, 1),
+    }
+}
+
+town_names(mineral_complete) {
+    {
+        town_names(mineral_pattern_1, 3),  // No. This Suffixes
+        town_names(mineral_pattern_2, 20), // No. Universal Municipalities
+        town_names(mineral_pattern_3, 2),  // No. This Municipalities
+    }
+}
+
+// Other - 34 Colours
+town_names(other_colour) {
+    {
+        // Greyscale
+        text("Fog", 1),
+        text("Soul", 1),
+        text("Zephyr", 1),
+        text("Storm", 1),
+        text("Plain", 1),
+        text("Feather", 1),
+        text("Mist", 1),
+        text("Rain", 1),
+        text("Cliff", 1),
+        // Red
+        text("Heart", 1),
+        text("Cochineal", 1),
+        text("Alizarin", 1),
+        text("Salmon", 1),
+        text("Fire", 1),
+        // Orange/Yellow
+        text("Hive", 1),
+        text("Relic", 1),
+        text("Beacon", 1),
+        text("Canary", 1),
+        text("Thunder", 1),
+        text("Bolt", 1),
+        // Green
+        text("Forest", 1),
+        text("Fen", 1),
+        // Blue
+        text("Water", 1),
+        text("Cascade", 1),
+        text("Sky", 1),
+        text("Seafoam", 1),
+        text("Navy", 1),
+        text("Icicle", 1),
+        // Purple
+        // Other
+        text("Grande", 1),
+        text("Neon", 1),
+        text("Pallet", 1),
+        text("Silent", 1),
+        text("Safari", 1),
+        text("Victory", 1),
+    }
+}
+
+town_names(other_pattern_1) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(other_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(universal_suffix, 1),
+    }
+}
+town_names(other_pattern_2) {
+    {
+        town_names(maybe_universal_prefix, 1)
+    }
+    {
+        town_names(other_colour, 3),
+        town_names(universal_colour, 1),
+    }
+    {
+        town_names(maybe_universal_suffix, 1),
+    }
+    {
+        town_names(universal_municipality, 1),
+    }
+}
+
+town_names(other_complete) {
+    {
+        town_names(other_pattern_1, 2),
+        town_names(other_pattern_2, 5),
+    }
+}
+
+// All together now
+town_names {
+    styles: string(STR_TOWN_NAME);
+    {
+        // Weights = No. Unique Colours
+        town_names(field_complete, 29),
+        town_names(bush_complete, 4),
+        town_names(tree_complete, 28),
+        town_names(mineral_complete, 64),
+        town_names(other_complete, 34),
+    }
+}

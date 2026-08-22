@@ -1,0 +1,6 @@
+VERSION  :0.0.1
+TITLE    :Randomized Pokemon Town Names
+
+PREFIX_RATIO     :1
+NON_PREFIX_RATIO :5
+
